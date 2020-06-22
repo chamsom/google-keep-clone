@@ -192,7 +192,7 @@ class App {
     const hasNotes = this.notes.length > 0;
     this.$placeholder.style.display = hasNotes ? "none" : "flex";
 
-    this.$notes.innerHTML = this.notes
+    this.$notes.innerHTML = this.notes // generating HTML template with .map() method.
       .map(
         note => `
         <div style="background: ${note.color};" class="note" data-id="${
@@ -204,10 +204,10 @@ class App {
             <div class="toolbar">
               <img class="toolbar-color" data-id=${
                 note.id
-              } src="https://icon.now.sh/palette">
+              } src="assets/palette.png">
               <img data-id=${
                 note.id
-              } class="toolbar-delete" src="https://icon.now.sh/delete">
+              } class="toolbar-delete" src="assets/delete.png">
             </div>
           </div>
         </div>

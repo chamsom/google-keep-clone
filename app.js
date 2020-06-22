@@ -119,7 +119,7 @@ class App {
     this.$modal.classList.toggle("open-modal");
   }
 
-  openTooltip(event) {
+  openTooltip(event) { // fixed toolbar errors.
     if (!event.target.matches(".toolbar-color")) return;
     this.id = event.target.nextElementSibling.dataset.id;
     const noteCoords = event.target.getBoundingClientRect();
@@ -155,7 +155,7 @@ class App {
     this.render();
   }
 
-  editNoteColor(color) { // Github pages not producing this...
+  editNoteColor(color) { 
     this.notes = this.notes.map(note =>
       note.id === Number(this.id) ? { ...note, color } : note
     );

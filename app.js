@@ -155,11 +155,11 @@ class App {
     this.render();
   }
 
-  editNoteColor(color) {
+  editNoteColor(color) { // Github pages not producing this...
     this.notes = this.notes.map(note =>
       note.id === Number(this.id) ? { ...note, color } : note
     );
-    this.render();
+    this.render(); 
   }
 
   selectNote(event) {

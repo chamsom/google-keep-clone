@@ -1,2 +1,3 @@
 # Google Keep Clone
-Created web app with similar functionality to Google Keep. Built with HTML, CSS, and JS.
+
+Created and finished project for the purpose of furthering my studies in Front-End Web Development.

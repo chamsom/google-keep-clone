@@ -2,4 +2,4 @@
 
 Created and finished project for the purpose of furthering my studies in Front-End Web Development.
 
-Built lovingly with modern JS (ES6) and CSS Flexbox. 
+Built lovingly with ES6 JS and CSS Flexbox. 

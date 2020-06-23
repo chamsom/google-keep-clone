@@ -107,7 +107,7 @@ class App {
   openModal(event) {
     if (event.target.matches('.toolbar-delete')) return;  
       
-    if (event.target.closest(".note")) {
+    if (event.target.closest(".note")) {  // is the event clicked on closest to the class .note?
       this.$modal.classList.toggle("open-modal");
       this.$modalTitle.value = this.title;
       this.$modalText.value = this.text;
@@ -150,8 +150,8 @@ class App {
     const title = this.$modalTitle.value;
     const text = this.$modalText.value;
     this.notes = this.notes.map(note =>
-      note.id === Number(this.id) ? { ...note, title, text } : note
-    );
+      note.id === Number(this.id) ? { ...note, title, text } : note // // iterate over each note, take the note id and see if it is equal to the id stored in the constructor.
+    ); // // use new array to update notes within the constructor.
     this.render();
   }
 
@@ -166,7 +166,10 @@ class App {
     const $selectedNote = event.target.closest(".note");
     if (!$selectedNote) return;
     const [$noteTitle, $noteText] = $selectedNote.children;
-    this.title = $noteTitle.innerText;
+    // returning a collection of child elements in $selectedNote.
+    // also using array destructing here to obtain individual values.
+    // in this case, $noteTitle and $noteText are the first & second children.
+    this.title = $noteTitle.innerText; // update the title & text properties.
     this.text = $noteText.innerText;
     this.id = $selectedNote.dataset.id;
   }
@@ -191,8 +194,9 @@ class App {
   displayNotes() {
     const hasNotes = this.notes.length > 0;
     this.$placeholder.style.display = hasNotes ? "none" : "flex";
-
+    
     this.$notes.innerHTML = this.notes // generating HTML template with .map() method.
+    // created a data property attribute data-id="${note.id}"...storing id of a given note in the HTML template.
       .map(
         note => `
         <div style="background: ${note.color};" class="note" data-id="${
